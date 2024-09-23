@@ -1,9 +1,9 @@
-import ProductCard from '@/app/components/ProductCard'
+import NavBar from '@/app/components/ui/NavBar'
 
 export default function Home() {
   return (
     <div>
-      <ProductCard/>
+     <NavBar/>
     </div>
   );
 }
