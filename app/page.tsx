@@ -1,9 +1,9 @@
-import NavBar from '@/app/components/ui/NavBar'
+import HomePage from './home/page';
 
-export default function Home() {
+export default function Main() {
   return (
-    <div>
-     <NavBar/>
+    <div className='flex flex-col gap-y-5'>
+     <HomePage />
     </div>
   );
 }

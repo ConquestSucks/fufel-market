@@ -25,3 +25,10 @@ body {
     text-wrap: balance;
   }
 }
+
+html,
+body,
+div#__next,
+div#__next > div {
+  height: 100%;
+}

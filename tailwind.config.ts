@@ -16,6 +16,9 @@ const config: Config = {
         'secondary': "#F4AB4F",
         'primary': "#F4AB4F",
       },
+      width: {
+        '30': '30%'
+      }
     },
   },
   plugins: [nextui()],
