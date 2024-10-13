@@ -1,0 +1,33 @@
+.iconContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #0070f3;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Расположение всплывающего окна */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Показываем всплывающий блок при наведении */
+.iconContainer:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

@@ -18,7 +18,7 @@ const config: Config = {
       },
       width: {
         '30': '30%'
-      }
+      },
     },
   },
   plugins: [nextui()],
