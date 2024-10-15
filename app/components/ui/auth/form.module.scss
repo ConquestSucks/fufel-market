@@ -1,23 +1,35 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 10px;
 
-    input {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        width: 100%; 
-        box-sizing: border-box;
-        background-color: #F5F5F7;
-        color: #705C53;
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
 
-        &:focus {
-            outline: none; 
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%; 
+            box-sizing: border-box;
+            background-color: var(--accent);
+            color: var(--primary);
+    
+            &::placeholder {
+                color: var(--primary)
+            }
+    
+            &:focus {
+                outline: none; 
+            }
         }
     }
 
     button {
-        border-radius: 5px;
+        background-color: var(--accent);
+        padding: 10px;
+        border-radius: 10px;
     }
 }

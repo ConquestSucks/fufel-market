@@ -13,7 +13,6 @@ const IconMenu = () => {
             />
             <div className={styles.menu} >
                 <Link href='/auth' className={styles.text}>Вход</Link>
-                <span className={styles.text}>Изменить тему</span>
             </div>
         </div>
     );

@@ -17,7 +17,7 @@ const SearchInput: FC<SearchInputProps> = ({ placeholder = 'Search' }) => {
 
     return (
         <form onSubmit={handleSubmit} className={`${openSans.className} flex gap-x-2 w-full font-semibold justify-center`}>
-          <input className="text-background bg-accent rounded-xl placeholder:text-background outline-none w-3/4 box-border p-1"
+          <input className="text-primary bg-accent rounded-xl placeholder:text-secondary outline-none w-3/4 box-border p-1"
             type="text"
             value={query}
             onChange={handleChange}

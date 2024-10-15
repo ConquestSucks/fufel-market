@@ -8,10 +8,10 @@ function AuthPage() {
     const toggleButton = () => authStore.toggleAuth()
 
     return (
-        <div className="w-full h-full flex justify-center items-center">
-            <div className="flex flex-col gap-2 items-center h-full">
-                <div className="flex gap-2">
-                    <span className="cursor-pointer" onClick={toggleButton}>{authStore.auth ?'Вход' : 'Регистрация'}</span>
+        <div className="w-full h-screen flex flex-col justify-start items-center">
+            <div className="flex flex-col gap-2 items-center p-9 rounded-lg bg-secondary">
+                <div className="flex gap-2 p-2 min-w-fit rounded-lg bg-accent cursor-pointer" onClick={toggleButton}>
+                    {authStore.auth ?'Вход' : 'Регистрация'}
                 </div>
                 <div className="h-full">
                     {authStore.auth ? (<SignIn/>) : (<SignUp/>)}

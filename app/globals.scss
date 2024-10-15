@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #705C53;
+  --secondary: #B7B7B7;
+  --accent: #F5F5F7;
+  --background: $primaryColor;
+  --foreground: $primaryColor;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #B7B7B7;
-    --foreground: #ededed;
+    --background: var(--accent);
+    --foreground: var(--primary);
   }
 }
 
@@ -26,9 +29,10 @@ body {
   }
 }
 
-html,
+/* html,
 body,
 div#__next,
 div#__next > div {
   height: 100%;
 }
+ */

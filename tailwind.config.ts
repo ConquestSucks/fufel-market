@@ -11,14 +11,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'background': "#705C53",
-        'accent': "#F5F5F7",
-        'secondary': "#F4AB4F",
-        'primary': "#F4AB4F",
+        'accent': "var(--accent)",
+        'secondary': "var(--secondary)",
+        'primary': "var(--primary)",
       },
       width: {
-        '30': '30%'
+        '30': '30%',
+        
       },
+      height: {
+        
+      }
     },
   },
   plugins: [nextui()],
