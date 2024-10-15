@@ -1,5 +1,5 @@
 /* import Image from 'next/image' */
-import { climateCrisis} from '@/app/ui/fonts';
+import { climateCrisis, openSans } from '@/app/ui/fonts';
 import Search from '@/app/components/ui/SearchInput'
 import ProfilePopup from '@/app/components/ui/navbar/ProfilePopup'
 import Link from 'next/link';
@@ -12,7 +12,7 @@ export default function NavBar() {
                     <span className={`${climateCrisis.className}`}>FUFELMARKET</span>
                 </Link>
                 <Search/>
-                <div className='w-1/4 flex justify-end'>
+                <div className={`${openSans.className} w-1/4 flex justify-end`}>
                     <ProfilePopup />
                 </div>
             </div>
