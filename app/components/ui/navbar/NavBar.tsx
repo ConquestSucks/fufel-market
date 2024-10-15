@@ -1,7 +1,7 @@
 /* import Image from 'next/image' */
 import { climateCrisis, openSans } from '@/app/ui/fonts';
 import Search from '@/app/components/ui/SearchInput'
-import ProfilePopup from '@/app/components/ui/navbar/ProfilePopup'
+import IconMenu from '@/app/components/ui/navbar/IconMenu'
 import Link from 'next/link';
 
 export default function NavBar() {
@@ -13,7 +13,7 @@ export default function NavBar() {
                 </Link>
                 <Search/>
                 <div className={`${openSans.className} w-1/4 flex justify-end`}>
-                    <ProfilePopup />
+                    <IconMenu />
                 </div>
             </div>
         </div>

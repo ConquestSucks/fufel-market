@@ -1,10 +1,11 @@
 .container {
     position: relative;
-    
+
     .menu {
         display: flex;
         position: absolute;
-        background-color: white;
+        background-color: #F5F5F7;
+        color: #705C53;
         font-weight: 500;
         font-size: small;
         right: 0;
@@ -15,6 +16,15 @@
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
         pointer-events: none;
+
+        .text {
+            cursor: pointer;
+
+            &:hover {
+                color: #B7B7B7;
+            }
+        }
+
     }
 
     
