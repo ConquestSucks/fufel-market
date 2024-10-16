@@ -3,7 +3,7 @@ import SearchInputProps from "@/app/types/search";
 import { ChangeEvent, FC, useState } from 'react';
 import { openSans } from '@/app/ui/fonts';
 
-const SearchInput: FC<SearchInputProps> = ({ placeholder = 'Search' }) => {
+const SearchInput: FC<SearchInputProps> = ({ placeholder = 'Поиск по объявлениям' }) => {
     const [query, setQuery] = useState('');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -17,13 +17,13 @@ const SearchInput: FC<SearchInputProps> = ({ placeholder = 'Search' }) => {
 
     return (
         <form onSubmit={handleSubmit} className={`${openSans.className} flex gap-x-2 w-full font-semibold justify-center`}>
-          <input className="text-primary bg-accent rounded-xl placeholder:text-secondary outline-none w-3/4 box-border p-1"
+          <input className="text-primary text-xs bg-accent rounded-xl placeholder:text-secondary outline-none w-3/4 box-border p-3"
             type="text"
             value={query}
             onChange={handleChange}
             placeholder={placeholder}
           />
-          <button type="submit">Find</button>
+          <button type="submit">Найти</button>
         </form>
     );
 };

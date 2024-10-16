@@ -7,7 +7,7 @@ export default function AdsPage() {
         <AdCard key={ad.id} ad={ad}/>
     ))
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center items-start min-h-screen p-2">
             <div className="flex flex-wrap  w-10/12 gap-5">
                 {adsList}
             </div>
