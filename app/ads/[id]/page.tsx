@@ -1,8 +1,8 @@
 import { adStore } from "@/app/store/ad.store";
 import Image from "next/image";
 
-export default function AdPage({ params }: { params: { adPageID: string } }) {
-    const ad = adStore.getAdById(Number(params.adPageID));
+export default function AdPage({ params }: { params: { id: string } }) {
+    const ad = adStore.getAdById(Number(params.id));
 
     if (!ad) {
         return <div>Объявление не найдено</div>;

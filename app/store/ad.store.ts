@@ -3,6 +3,7 @@ import AdCard from "../types/adCard";
 
 class AdStore {
     ads: Array<AdCard>;
+    
     constructor() {
         this.ads = [
             new AdCard(0, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),

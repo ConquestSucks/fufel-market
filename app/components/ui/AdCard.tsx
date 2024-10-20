@@ -18,9 +18,9 @@ const AdCard = ({ ad } : { ad: AdCardClass }) => {
             alt=""
             />
             <div className="flex flex-col gap-0.5">
-                <span className="text-3xl font-black">{ad.name}</span>
-                <span className="text-2xl font-bold">{ad.price} ₽</span>
-                <span className="text-xl">{ad.city}</span>
+                <span className="text-3xl font-bold">{ad.name}</span>
+                <span className="text-2xl">{ad.price} ₽</span>
+                <span className="">{ad.city}</span>
             </div>
         </Link>
     ) 
