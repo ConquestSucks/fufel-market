@@ -1,7 +1,11 @@
 import { makeAutoObservable, action } from "mobx";
+import User from "../types/user";
 
 class AuthStore {
-    auth: boolean = false
+    isAuthenticated: boolean = false;
+    userToken: string | null = null;
+    currentUser: User | null = null;
+    authForm: boolean = false;
 
     constructor() {
         makeAutoObservable(this, {
@@ -9,8 +13,22 @@ class AuthStore {
         })
     }
 
+    login(user: User) {
+        this.isAuthenticated = true;
+        this.currentUser = user;
+    }
+
+    logout() {
+        this.isAuthenticated = false;
+        this.currentUser = null;
+    }
+
+    get getUserData() {
+        return this.currentUser;
+    }
+
     toggleAuth() {
-        this.auth = !this.auth
+        this.authForm = !this.authForm
     }
 
 }
