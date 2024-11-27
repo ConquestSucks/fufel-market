@@ -8,7 +8,7 @@ export default function NavBar() {
     return (
         <div className={`bg-primary  text-accent text-2xl p-3`}>
             <div className="flex gap-x-10 justify-between items-center">
-                <Link className='flex cursor-pointer w-30' href='/'>
+                <Link href='/'>
                     <span className={`${climateCrisis.className}`}>FUFELMARKET</span>
                 </Link>
                 <Search/>

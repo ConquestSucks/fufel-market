@@ -1,8 +1,23 @@
+'use client'
 import { adStore } from "@/app/store/ad.store";
+import { userStore } from "@/app/store/user.store";
+import { observer } from "mobx-react-lite";
 import Image from "next/image";
+import { useEffect } from "react";
 
-export default function AdPage({ params }: { params: { id: string } }) {
-    const ad = adStore.getAdById(Number(params.id));
+const AdPage = observer(({ params }: { params: { id: string } }) =>{
+    useEffect(()=> {
+        adStore.loadAdById(Number(params.id));
+        
+    }, [params.id])
+
+    const ad = adStore.ad
+
+    if (adStore.loading) {
+        return <div>
+            Загрузка
+        </div>
+    }
 
     if (!ad) {
         return <div>Объявление не найдено</div>;
@@ -29,7 +44,7 @@ export default function AdPage({ params }: { params: { id: string } }) {
                             <span>{ad.description}</span>
                         </div>
                         <div className="flex justify-end my-3">
-                            <span className="text-xs italic">5 просмотров</span>
+                            <span className="text-xs italic">Просмотры: {ad.views}</span>
                         </div>
                         <div className="flex justify-center w-full">
                             <button className="border-2 rounded-xl p-2">Пожаловаться на объявление</button>
@@ -59,4 +74,6 @@ export default function AdPage({ params }: { params: { id: string } }) {
             </div>
         </div>
     );
-}
+})
+
+export default AdPage;

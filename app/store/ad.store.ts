@@ -1,26 +1,28 @@
 import { makeAutoObservable } from "mobx";
 import AdCard from "../types/adCard";
+import axios from "axios";
 
 class AdStore {
     ads: Array<AdCard>;
+    ad: AdCard | null
+    loading: boolean = false;
+    url: string = ""
     
     constructor() {
-        this.ads = [
-            new AdCard(0, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(1, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(2, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(3, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(4, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(5, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(6, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(7, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-            new AdCard(8, 'Колеса', 'R15', 's', 1000, 'Екатеринбург'),
-        ]
+        this.ads = []
+        this.ad = null
         makeAutoObservable(this)
     }
 
-    getAdById(id: number) {
-        return this.ads.find((ad) => ad.id === id) || null;
+    async loadAds() {
+        this.loading = true
+
+    
+            
+    }
+
+    async loadAdById(id: number) {
+
     }
 }
 
