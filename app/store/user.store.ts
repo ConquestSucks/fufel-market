@@ -5,17 +5,15 @@ import axios from "axios";
 
 class UserStore {
     user: User | null = null
-    url: string = ""
+    url: string = 'http://localhost:7151/api'
 
     constructor() {
         makeAutoObservable(this)
     }
 
-    
-
     async getUser(id: number) {
         try {
-            const response = (await axios.get(`http://localhost:7151/api/user/${id}`)).data;
+            const response = (await axios.get(`${this.url}/user/${id}`)).data;
             console.log(response)
             return response
 

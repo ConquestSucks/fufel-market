@@ -27,7 +27,7 @@ const AdPage = observer(({ params }: { params: { id: string } }) =>{
         <div className="min-h-screen flex flex-col items-center gap-2 w-full">
             <div className="w-8/12 border-2 shadow-xs rounded-xl p-7">
                 <div className="flex w-full">
-                    <span>Категория</span>
+                    <span>{ad.category}</span>
                 </div>
                 <div className="flex w-full justify-between">
                     <div>
@@ -56,12 +56,12 @@ const AdPage = observer(({ params }: { params: { id: string } }) =>{
                             <button className="text-2xl font-semibold border-2 rounded-xl p-2">В избранное</button>
                         </div>
                         <div className="flex gap-2 w-full justify-between">
-                            <button className="bg-secondary p-2 rounded-xl font-bold w-3/6">Телефон</button>
+                            <button className="bg-secondary p-2 rounded-xl font-bold w-3/6">{ad.user.phone}</button>
                             <button className="bg-secondary p-2 rounded-xl font-bold w-3/6">Написать</button>
                         </div>
                         <div className="flex items-center justify-between">
                             <div className="flex flex-col">
-                                <span className="font-extrabold text-xl">Имя продавца</span>
+                                <span className="font-extrabold text-xl">{ad.user.name}</span>
                                 <div className="flex gap-2">
                                     <span className="font-semibold">Рейтинг</span>
                                     <span className="font-bold">15 отзывов</span>
