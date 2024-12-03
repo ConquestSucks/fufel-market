@@ -1,0 +1,33 @@
+.background {
+    background-color: var(--primary);
+    height: 80px;
+
+    .content {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 43px;
+            
+            padding-left: 100px;
+
+            span {
+                line-height: 39px;
+                height: 39px;
+                font-size: 40px;
+                color: #EBEAFF;
+                font-weight: 700;
+            }
+        }
+
+        .auth {
+            padding-right: 100px;
+            
+        }
+    }
+}

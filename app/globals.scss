@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --primary: #705C53;
-  --secondary: #B7B7B7;
-  --accent: #F5F5F7;
+  --primary: #9694FF;
+  --secondary: #EBEAFF;
+  --accent: #8583FF;
   --background: $primaryColor;
   --foreground: $primaryColor;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--accent);
-    --foreground: var(--primary);
+    --background: var(--secondary);
+    --foreground: var(--secondary);
   }
 }
 
 body {
+  display: flex;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;

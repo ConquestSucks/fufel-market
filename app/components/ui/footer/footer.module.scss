@@ -1,0 +1,25 @@
+.footer {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background-color: rgb(0, 0, 0, 0.05);
+    
+
+    &-text {
+        padding-left: 100px;
+        
+
+        span {
+            color: var(--primary);
+            font-size: 16px;
+            text-decoration:underline;
+        }
+    }
+
+    &-icons {
+        display: flex;
+        row-gap: 13px;
+        padding-right: 100px;
+    }
+}

@@ -1,18 +1,18 @@
-/* import Image from 'next/image' */
-import { climateCrisis, openSans } from '@/app/ui/fonts';
-import Search from '@/app/components/ui/SearchInput'
+import { merriweatherSans } from '@/app/ui/fonts';
+import FlagIcon from "@/public/navbar/flag.svg"
+import styles from './navbar.module.scss'
 import IconMenu from '@/app/components/ui/navbar/IconMenu'
 import Link from 'next/link';
 
 export default function NavBar() {
     return (
-        <div className={`bg-primary  text-accent text-2xl p-3`}>
-            <div className="flex gap-x-10 justify-between items-center">
-                <Link href='/'>
-                    <span className={`${climateCrisis.className}`}>FUFELMARKET</span>
+        <div className={styles.background}>
+            <div className={styles.content}>
+                <Link className={styles.brand} href='/'>
+                    <span className={merriweatherSans.className}>ФУФЕЛМАРКЕТ.</span>
+                    <FlagIcon/>
                 </Link>
-                <Search/>
-                <div className={`${openSans.className} w-1/4 flex justify-end`}>
+                <div className={styles.auth}>
                     <IconMenu />
                 </div>
             </div>
