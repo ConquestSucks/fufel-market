@@ -1,18 +1,120 @@
-.static {
-    transition: color 0.35s;
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20%;
+    position: relative;
+    overflow: hidden;
 
-    &.active {
-        color: #3C3F43;
+    .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        position: relative;
+        z-index: 0;
+        row-gap: 36px;
+        background-color: var(--secondary);
+
+        span {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primary);
+        }
     }
 
-    font-weight: 800;
-}
+    img {
+        position: absolute;
+        filter: blur(3px);
+        z-index: 11;
+    }
 
-.magnetic {
-    position: absolute;
-    color: var(--background);
-    opacity: 0;
-    transition: opacity .3s;
-    z-index: 1;
-    font-weight: 800;
+    .laptop {
+        left: -100px;
+        top: 150px;
+    }
+
+    .phone {
+        top: 420px;
+
+    }
+
+    .sofa {
+        right: -410px;
+        top: -200px;
+    }
+
+    @media (max-width: 1440px) {
+
+        .laptop,
+        .phone,
+        .sofa {
+            transform: scale(0.8);
+        }
+
+        .phone {
+            top: 430px;
+        }
+
+        .laptop {
+            left: -130px;
+        }
+
+        .sofa {
+            right: -430px;
+        }
+    }
+
+    @media (max-width: 1280px) {
+
+        .laptop,
+        .phone,
+        .sofa {
+            transform: scale(0.7);
+        }
+
+        .laptop {
+            left: -150px;
+        }
+
+        .sofa {
+            right: -440px;
+        }
+    }
+
+    @media (max-width: 1279px) {
+
+        .laptop,
+        .phone,
+        .sofa {
+            display: none;
+        }
+    }
+
+/*     @media (max-width: 768px) {
+
+        .laptop,
+        .phone,
+        .sofa {
+            transform: scale(0.8);
+        }
+    }
+
+    @media (max-width: 576px) {
+
+        .laptop,
+        .phone,
+        .sofa {
+            transform: scale(0.75);
+        }
+    }
+
+    @media (max-width: 360px) {
+
+        .laptop,
+        .phone,
+        .sofa {
+            transform: scale(0.7);
+        }
+    } */
 }

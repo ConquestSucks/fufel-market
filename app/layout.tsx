@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import NavBar from '@/app/components/ui/navbar/NavBar'
+import Footer from "./components/ui/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Fufel Market",
@@ -17,10 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased flex flex-col gap-4`}
+        className={`antialiased flex flex-col gap-4 h-screen`}
       >
         <NavBar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

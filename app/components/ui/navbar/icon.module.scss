@@ -1,6 +1,15 @@
 .container {
     position: relative;
 
+    .icon {
+        fill: #EBEAFF;
+        transition: fill 0.3s ease;
+
+        &:hover {
+            fill: #3D3BF3;
+        }
+    }
+
     .menu {
         display: flex;
         position: absolute;
@@ -13,7 +22,7 @@
         padding: 7px;
         border-radius: 4px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.3s ease-in-out;
         pointer-events: none;
 

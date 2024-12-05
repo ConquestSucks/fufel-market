@@ -72,12 +72,16 @@ class TextScramble {
   
 
   const phrases: string[] = [
-    'Easy. Convenient. Profitable.',
-    'Listings for every taste',
-    'The best prices near you',
-    'Sell what you don’t need quickly',
-    'From furniture to electronics',
-    'Your new phone is already waiting',
+    "Купи. Продай. Найди счастье на ФуфелМаркет!",
+    "Все, что угодно, по лучшей цене – только у нас!",
+    "ФуфелМаркет – покупки и продажи без фуфла!",
+    "Продай ненужное – купи мечту!",
+    "Легко найти, легко продать, легко жить!",
+    "ФуфелМаркет. Ваш шанс заработать на всем!",
+    "Твое ненужное – чье-то сокровище!",
+    "Покупай и продавай в пару кликов!",
+    "Лучшие сделки рождаются на ФуфелМаркет!",
+    "ФуфелМаркет – удобно, быстро, выгодно!"
   ];
   
 
@@ -89,7 +93,7 @@ class TextScramble {
       let counter = 0;
       const next = () => {
         fx.setText(phrases[counter]).then(() => {
-          setTimeout(next, 800);
+          setTimeout(next, 5000);
         });
         counter = (counter + 1) % phrases.length;
       };

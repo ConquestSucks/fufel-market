@@ -1,0 +1,43 @@
+.outline {
+    display: flex;
+    column-gap: 6px;
+    justify-content: center;
+    align-items: center;
+    width: 587px;
+    height: 61px;
+    background-color: var(--primary);
+    border-radius: 15px;
+
+    input {
+        width: 509px;
+        height: 49px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        background-color: var(--accent);
+        color: var(--secondary);
+        outline: none;
+        font-size: 26px;
+        padding-left: 16px;
+    }
+
+    .find {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 49px;
+        background-color: var(--accent);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        svg {
+            cursor: pointer;
+            fill: #EBEAFF;
+            transition: fill 0.3s ease;
+
+            &:hover {
+                fill: #3D3BF3;;
+            }
+        }
+    }
+}
