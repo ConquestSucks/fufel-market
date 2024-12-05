@@ -11,7 +11,7 @@ class UserStore {
         makeAutoObservable(this)
     }
 
-    async getUser(id: number) {
+/*     async getUser(id: number) {
         try {
             const response = (await axios.get(`${this.url}/user/${id}`)).data;
             console.log(response)
@@ -21,7 +21,7 @@ class UserStore {
             console.error("error by fetchting user id");
             throw error
         }
-    }
+    } */
     
 }
 

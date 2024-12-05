@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import AdCard from "../types/adCard";
-import axios from "axios";
+//import axios from "axios";
 
 class AdStore {
     ads: Array<AdCard>;
@@ -14,7 +14,7 @@ class AdStore {
         makeAutoObservable(this)
     }
 
-    async loadAds() {
+/*     async loadAds() {
         this.loading = true
         try {
             const response = (await axios.get(`${this.url}/ad/`)).data
@@ -27,9 +27,9 @@ class AdStore {
             this.loading = false
             throw error
         }
-    }
+    } */
 
-    async loadAdById(id: number) {
+/*     async loadAdById(id: number) {
         this.loading = true
         try {
             const adResponse = (await axios.get(`${this.url}/ad/${id}`)).data
@@ -46,7 +46,7 @@ class AdStore {
             this.loading = false
             throw error
         }
-    }
+    } */
 }
 
 export const adStore = new AdStore()

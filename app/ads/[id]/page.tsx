@@ -1,6 +1,5 @@
 'use client'
 import { adStore } from "@/app/store/ad.store";
-import { userStore } from "@/app/store/user.store";
 import { observer } from "mobx-react-lite";
 import Image from "next/image";
 import { useEffect } from "react";
