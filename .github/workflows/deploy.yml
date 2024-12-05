@@ -18,36 +18,27 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Node.js версии 18 для Next.js
+          node-version: '18'
 
       # 3. Устанавливаем зависимости
       - name: Install dependencies
         run: npm install
 
-      # 4. Сборка Next.js приложения
+      # 4. Сборка приложения
       - name: Build Next.js project
-        run: npm run build  # Используем next build из package.json
+        run: npm run build
 
-      # 5. Загрузка файлов на сервер
-      - name: Deploy to server
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        with:
-          source: "."  # Загружаем весь проект
-          target: ${{ secrets.TARGET_PATH }}  # Папка на сервере
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-
-      # 6. Запуск или перезапуск приложения через PM2
-      - name: Restart Next.js with PM2
+      # 5. Деплой файлов через SCP (с использованием пароля)
+      - name: Deploy files via SCP
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
-          cd /var/www/fufel-market
+          sshpass -p ${{ secrets.REMOTE_PASSWORD }} scp -r . ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/var/www/фуфелмаркет.рф
+
+      # 6. Перезапуск приложения через SSH (с использованием пароля)
+      - name: Restart application
+        run: |
+          sshpass -p ${{ secrets.REMOTE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
+          cd /var/www/фуфелмаркет.рф
           npm install
-          pm2 restart fufel-market || pm2 start npm --name "fufel-market" -- start
+          pm2 restart фуфелмаркет.рф || pm2 start npm --name "фуфелмаркет.рф" -- start
           pm2 save
           EOF
