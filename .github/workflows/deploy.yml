@@ -1,0 +1,23 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - master  # Автодеплой при пуше в ветку main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонируем репозиторий (необязательно, но полезно для тестов)
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 2. Выполняем скрипт на сервере
+      - name: Run deploy script on server
+        run: |
+          sshpass -p ${{ secrets.REMOTE_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
+          cd ~
+          ./deploy.sh
+          EOF
