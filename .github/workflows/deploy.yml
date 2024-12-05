@@ -1,0 +1,50 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - master  # Автодеплой при пуше в ветку main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонируем репозиторий
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 2. Устанавливаем Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Node.js версии 18 для Next.js
+
+      # 3. Устанавливаем зависимости
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Сборка Next.js приложения
+      - name: Build Next.js project
+        run: next build  # Используем next build из package.json
+
+      # 5. Загрузка файлов на сервер
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        with:
+          source: "."  # Загружаем весь проект
+          target: ${{ secrets.TARGET_PATH }}  # Папка на сервере
+
+      # 6. Запуск или перезапуск приложения через PM2
+      - name: Restart Next.js with PM2
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
+          cd /var/www/fufel-market
+          npm install
+          pm2 restart fufel-market || pm2 start npm --name "fufel-market" -- start
+          pm2 save
+          EOF
