@@ -8,7 +8,7 @@ class TextScramble {
   
     constructor(el: HTMLElement) {
       this.el = el;
-      this.chars = '🇷🇺';
+      this.chars = '!<>-_\\/[]{}—=+*^?#________';
       this.frame = 0;
       this.queue = [];
       this.update = this.update.bind(this);

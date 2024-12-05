@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased flex flex-col gap-4`}
+        className={`antialiased flex flex-col gap-4 h-screen`}
       >
         <NavBar/>
         {children}

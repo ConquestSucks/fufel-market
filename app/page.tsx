@@ -10,7 +10,7 @@ export default function Main() {
     ScrambleEffect()
 }, [])
   return (
-    <div className='flex flex-col gap-y-5'>
+    <div className='flex flex-col gap-y-5 h-screen'>
      <HomePage />
     </div>
   );
