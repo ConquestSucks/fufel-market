@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import User from "../types/user";
-import axios from "axios";
+//import axios from "axios";
 
 
 class UserStore {
