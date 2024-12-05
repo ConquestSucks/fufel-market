@@ -31,7 +31,7 @@ jobs:
       # 5. Деплой файлов через SCP (с использованием пароля)
       - name: Deploy files via SCP
         run: |
-          sshpass -p ${{ secrets.REMOTE_PASSWORD }} scp -r . ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/var/www/фуфелмаркет.рф
+          sshpass -p ${{ secrets.REMOTE_PASSWORD }} scp -o StrictHostKeyChecking=no -r . ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/var/www/фуфелмаркет.рф
 
       # 6. Перезапуск приложения через SSH (с использованием пароля)
       - name: Restart application
