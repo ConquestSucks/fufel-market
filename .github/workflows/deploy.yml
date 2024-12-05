@@ -38,6 +38,9 @@ jobs:
         with:
           source: "."  # Загружаем весь проект
           target: ${{ secrets.TARGET_PATH }}  # Папка на сервере
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
 
       # 6. Запуск или перезапуск приложения через PM2
       - name: Restart Next.js with PM2
