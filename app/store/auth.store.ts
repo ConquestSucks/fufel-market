@@ -1,25 +1,46 @@
-import { makeAutoObservable, action } from "mobx";
-import User from "../types/user";
+import { makeAutoObservable } from "mobx";
+import User from "../interfaces/user";
+import axios from "axios";
 
 class AuthStore {
-    isAuthenticated: boolean = false;
     userToken: string | null = null;
     currentUser: User | null = null;
-    authForm: boolean = false;
+    isCodeSent: boolean = false;
+    url: string = 'http://localhost:5218/api'
+    isModalOpen: boolean = false;
 
     constructor() {
-        makeAutoObservable(this, {
-            toggleAuth: action
-        })
+        makeAutoObservable(this);
     }
 
-    login(user: User) {
-        this.isAuthenticated = true;
-        this.currentUser = user;
+    openModal() {
+        this.isModalOpen = true;
+    }
+
+    closeModal() {
+        this.isModalOpen = false;
+    }
+
+    toggleModal() {
+        this.isModalOpen = !this.isModalOpen;
+    }
+
+    sendVerificationCode = async (email: string) => {
+        try {
+            await axios.post(`${this.url}/mail/sendVerificationCode/${email}`, email)
+            this.isCodeSent = true
+        }
+        catch(error) {
+            console.error("error by sending code");
+            throw error
+        }
+    }
+    
+    login = async () => {
+
     }
 
     logout() {
-        this.isAuthenticated = false;
         this.currentUser = null;
     }
 
@@ -27,9 +48,6 @@ class AuthStore {
         return this.currentUser;
     }
 
-    toggleAuth() {
-        this.authForm = !this.authForm
-    }
 
 }
 

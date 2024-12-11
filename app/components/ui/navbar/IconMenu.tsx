@@ -1,14 +1,15 @@
+'use client';
 import React from 'react';
 import AuthImg from  '@/public/navbar/auth-button.svg'
 import styles from './icon.module.scss'
-import Link from 'next/link';
+import { authStore } from '@/app/store/auth.store';
 
 const IconMenu = () => {
     return (
         <div className={styles.container}>
-            <Link href='/auth'>
+            <div onClick={() => authStore.openModal()}>
                 <AuthImg className={styles.icon}/>
-            </Link>
+            </div>
         </div>
     );
 };

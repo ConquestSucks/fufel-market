@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import NavBar from '@/app/components/ui/navbar/NavBar'
 import Footer from "./components/ui/footer/Footer";
+import SignInModal from "./components/ui/auth/SignIn";
 
 export const metadata: Metadata = {
   title: "Fufel Market",
@@ -21,7 +22,11 @@ export default function RootLayout({
         className={`antialiased flex flex-col gap-4 h-screen`}
       >
         <NavBar/>
+        <div id="modal-root">
+          <SignInModal/>
+        </div>
         {children}
+        <SignInModal/>
         <Footer/>
       </body>
     </html>
