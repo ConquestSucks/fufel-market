@@ -75,11 +75,11 @@
                 font-weight: bold;
                 border-radius: 15px;
                 border: 2px solid transparent;
-                transition: border 0.3s ease-in-out;
-        
-                &:hover {
-                    border: 2px solid var(--primary);
-                }
+                transition: 0.5s ease;
+            }
+
+            .stretched  {
+                width: 40%;
             }
         }
     }
